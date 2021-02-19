@@ -11,7 +11,6 @@
 		"start:server": "node build/server/bundle.js",
 		"dev:client": "webpack serve --config webpack.client.config.js",
 		"dev:server": "nodemon --watch client --watch server --exec 'run-s clear:server build:server start:server'",
-		"dev:server-old": "nodemon --ignore build --exec 'BABEL_NODE=true npx babel-node server/index.js'",
 		"dev": "run-p dev:client dev:server"
 	},
 	"author": "Suhan Wijaya",
