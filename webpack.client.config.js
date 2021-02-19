@@ -1,7 +1,6 @@
 'use strict';
 
 const path = require('path');
-const crypto = require('crypto');
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const sharedConfig = require('./webpack.shared.config.js');
