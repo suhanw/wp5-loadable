@@ -24,26 +24,26 @@ let config = {
 		allowlist: [/^webpack\/container\/reference\//],
 	})],
 
-	module: {
-		rules: [
-			{
-				test: /\.less$/,
-				use: [
-					{
-						loader: 'css-loader',
-						options: {
-							modules: {
-								exportOnlyLocals: true,
-								exportLocalsConvention: 'camelCase',
-								localIdentName: '[local]_[hash:base64:5]',
-							},
-						}
-					},
-					'less-loader',
-				]
-			},
-		],
-	},
+	// module: {
+	// 	rules: [
+	// 		{
+	// 			test: /\.less$/,
+	// 			use: [
+	// 				{
+	// 					loader: 'css-loader',
+	// 					options: {
+	// 						modules: {
+	// 							exportOnlyLocals: true,
+	// 							exportLocalsConvention: 'camelCase',
+	// 							localIdentName: '[local]_[hash:base64:5]',
+	// 						},
+	// 					}
+	// 				},
+	// 				'less-loader',
+	// 			]
+	// 		},
+	// 	],
+	// },
 };
 
 module.exports = merge(sharedConfig, config);

@@ -1,6 +1,7 @@
 'use strict';
 
 const LoadablePlugin = require('@loadable/webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -14,6 +15,22 @@ module.exports = {
 				loader: 'babel-loader',
 				exclude: /node_modules/,
 			},
+			{
+				test: /\.less$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							modules: {
+								exportLocalsConvention: 'camelCase',
+								localIdentName: '[local]_[hash:base64:5]',
+							},
+						},
+					},
+					'less-loader',
+				],
+			},
 		],
 	},
 
@@ -22,6 +39,9 @@ module.exports = {
 	},
 
 	plugins: [
+		new MiniCssExtractPlugin({ // extracts css from bundle
+			filename: `styles/[name].css`,
+		}),
 		new LoadablePlugin({ // to enable SSR code splitting
 			filename: `loadable-stats.json`, // list of webpack chunk assets
 			writeToDisk: true 

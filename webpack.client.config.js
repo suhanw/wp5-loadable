@@ -24,32 +24,32 @@ const config = {
 		liveReload: true
 	},
 
-	plugins: [
-		new MiniCssExtractPlugin({ // extracts css from bundle
-			filename: `styles/[name].css`,
-		}),
-	],
+	// plugins: [
+	// 	new MiniCssExtractPlugin({ // extracts css from bundle
+	// 		filename: `styles/[name].css`,
+	// 	}),
+	// ],
 
-	module: {
-		rules: [
-			{
-				test: /\.less$/,
-				use: [
-					MiniCssExtractPlugin.loader,
-					{
-						loader: 'css-loader',
-						options: {
-							modules: {
-								exportLocalsConvention: 'camelCase',
-								localIdentName: '[local]_[hash:base64:5]',
-							},
-						},
-					},
-					'less-loader',
-				],
-			},
-		],
-	},
+	// module: {
+	// 	rules: [
+	// 		{
+	// 			test: /\.less$/,
+	// 			use: [
+	// 				MiniCssExtractPlugin.loader,
+	// 				{
+	// 					loader: 'css-loader',
+	// 					options: {
+	// 						modules: {
+	// 							exportLocalsConvention: 'camelCase',
+	// 							localIdentName: '[local]_[hash:base64:5]',
+	// 						},
+	// 					},
+	// 				},
+	// 				'less-loader',
+	// 			],
+	// 		},
+	// 	],
+	// },
 };
 
 module.exports = merge(sharedConfig, config);
