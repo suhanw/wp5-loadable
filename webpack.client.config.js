@@ -11,6 +11,7 @@ const config = {
 	target: 'web',
 
 	entry: './client/bootstrap.js', 
+	// entry: './client/index.js', 
 
 	output: {
 		path: path.join(__dirname, './build/client'),
